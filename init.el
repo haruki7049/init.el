@@ -61,6 +61,7 @@
 ;; Backup files
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 ;; Delete menu bar
 (menu-bar-mode -1)
