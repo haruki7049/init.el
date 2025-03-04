@@ -1,5 +1,10 @@
 (setq-default enable-local-variables nil)
 
+(setq custom-file "~/.config/custom.el")
+(condition-case nil
+    (load custom-file)
+  (error nil))
+
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
       ("org" . "https://orgmode.org/elpa/")
