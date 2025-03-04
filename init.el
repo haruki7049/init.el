@@ -1,4 +1,5 @@
 (setq-default enable-local-variables nil)
+(setq use-package-always-ensure t)
 
 (setq custom-file "~/.config/emacs/custom.el")
 (condition-case nil
