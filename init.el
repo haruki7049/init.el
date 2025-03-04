@@ -1,4 +1,4 @@
-(setq-default enable-local-variables :all)
+(setq-default enable-local-variables nil)
 
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
