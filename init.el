@@ -1,6 +1,6 @@
 (setq-default enable-local-variables nil)
 
-(setq custom-file "~/.config/custom.el")
+(setq custom-file "~/.config/emacs/custom.el")
 (condition-case nil
     (load custom-file)
   (error nil))
