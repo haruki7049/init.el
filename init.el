@@ -19,12 +19,12 @@
 (use-package rust-mode
   :ensure t
   :mode
-  ("\\.rs\\" . rust-mode))
+  ("\\.rs\\'" . rust-mode))
 
 (use-package zig-mode
   :ensure t
   :mode
-  ("\\.zig\\" . zig-mode))
+  ("\\.zig\\'" . zig-mode))
 
 (use-package nix-mode
   :ensure t
