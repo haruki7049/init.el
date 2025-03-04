@@ -1,3 +1,11 @@
+(setq-default enable-local-variables :all)
+
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+      ("org" . "https://orgmode.org/elpa/")
+      ("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+
 (use-package dracula-theme
   :ensure t
   :config
