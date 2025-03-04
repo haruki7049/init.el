@@ -33,17 +33,17 @@
 
 (use-package envrc
   :ensure t
-  :init
-  (add-hook 'after-init-hook 'envrc-global-mode))
+  :hook
+  (after-init . envrc-global-mode))
 
 (use-package ddskk
   :ensure t
-  :init
-  (global-set-key "\C-x\C-j" 'skk-mode))
+  :bind
+  ("C-x C-j" . skk-mode))
 
 (use-package vertico
   :ensure t
-  :init
+  :config
   (vertico-mode))
 
 ;; Indentation
