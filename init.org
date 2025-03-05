@@ -46,16 +46,19 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 *** language-modes
 #+begin_src emacs-lisp
   (use-package rust-mode
+    :defer t
     :ensure t
     :mode
     ("\\.rs\\'" . rust-mode))
 
   (use-package zig-mode
+    :defer t
     :ensure t
     :mode
     ("\\.zig\\'" . zig-mode))
 
   (use-package nix-mode
+    :defer t
     :ensure t
     :mode
     ("\\.nix\\'" . nix-mode))
@@ -65,6 +68,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package ddskk
+    :defer t
     :ensure t
     :bind
     ("C-x C-j" . skk-mode))
@@ -83,6 +87,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package envrc
+    :defer t
     :ensure t
     :hook
     (after-init . envrc-global-mode))
@@ -92,6 +97,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package vertico
+    :defer t
     :ensure t
     :config
     (vertico-mode))
