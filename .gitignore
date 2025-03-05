@@ -7,4 +7,8 @@ mastodon.plstore/
 newsticker/
 themes/
 history
+init.el
 custom.el
+
+# nix-direnv
+.direnv/
