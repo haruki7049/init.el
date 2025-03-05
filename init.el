@@ -51,9 +51,9 @@
 (setopt tab-width 2)
 
 ;; FONT SETTING
-(set-face-attribute 'default nil
-                    :family "UDEV Gothic NF" ;;This point has a font dependency
-                    :height 140)
+;;(set-face-attribute 'default nil
+;;                    :family "UDEV Gothic NF" ;;This point has a font dependency
+;;                    :height 140)
 
 ;; Save history of mini-buffer and etc
 (savehist-mode 1)
