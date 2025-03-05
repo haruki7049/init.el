@@ -82,17 +82,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :config
     (load-theme 'dracula t))
 #+end_src
-
-*** direnv
-
-#+begin_src emacs-lisp
-  (use-package envrc
-    :defer t
-    :ensure t
-    :hook
-    (after-init . envrc-global-mode))
-#+end_src
-
 *** UI
 
 #+begin_src emacs-lisp
@@ -104,6 +93,16 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+end_src
 
 *** Tools
+**** direnv
+
+#+begin_src emacs-lisp
+  (use-package envrc
+    :defer t
+    :ensure t
+    :hook
+    (after-init . envrc-global-mode))
+#+end_src
+
 **** Git
 
 #+begin_src emacs-lisp
