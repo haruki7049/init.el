@@ -2,6 +2,8 @@
 #+AUTHOR: haruki7049
 #+STARTUP: overview
 
+This =init.org= is checked under emacs-29.4
+
 When you write code in code block:
 #+begin_quote
     1. =C-c ‘= とする
