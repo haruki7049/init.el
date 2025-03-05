@@ -2,33 +2,38 @@
 #+AUTHOR: haruki7049
 #+STARTUP: overview
 
+
+
 * early-init
+** enable-local-variables
+https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
 #+BEGIN_SRC emacs-lisp
   (setq-default enable-local-variables nil)
+#+END_SRC
 
+** custom.el
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+https://qiita.com/javacommons/items/87bebffc4183a48cf070
+#+BEGIN_SRC emacs-lisp
   (setq custom-file "~/.config/emacs/custom.el")
   (condition-case nil
       (load custom-file)
     (error nil))
-
 #+END_SRC
 
 * use-package
 ** package-archives
 #+BEGIN_SRC emacs-lisp
-
   (setq package-archives
         '(("melpa" . "https://melpa.org/packages/")
           ("org" . "https://orgmode.org/elpa/")
           ("gnu" . "https://elpa.gnu.org/packages/")))
   (package-initialize)
-  
 #+END_SRC
 
 ** Initializing packages
 
 #+BEGIN_SRC emacs-lisp
-
   (use-package dracula-theme
     :ensure t
     :config
@@ -63,9 +68,8 @@
     :ensure t
     :config
     (vertico-mode))
-  
 #+END_SRC
-  
+
 * Other settings  
 
 #+BEGIN_SRC emacs-lisp
