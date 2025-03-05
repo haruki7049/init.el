@@ -6,6 +6,7 @@ url/
 mastodon.plstore/
 newsticker/
 themes/
+games/
 history
 init.el
 custom.el
