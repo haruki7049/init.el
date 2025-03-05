@@ -2,8 +2,6 @@
 #+AUTHOR: haruki7049
 #+STARTUP: overview
 
-
-
 * early-init
 ** enable-local-variables
 https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
@@ -12,7 +10,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.h
 #+END_SRC
 
 ** custom.el
-https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html
+https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html\\
 https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+BEGIN_SRC emacs-lisp
   (setq custom-file "~/.config/emacs/custom.el")
