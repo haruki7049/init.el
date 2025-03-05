@@ -47,8 +47,8 @@
   (vertico-mode))
 
 ;; Indentation
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setopt indent-tabs-mode nil)
+(setopt tab-width 2)
 
 ;; FONT SETTING
 (set-face-attribute 'default nil
@@ -59,9 +59,9 @@
 (savehist-mode 1)
 
 ;; Backup files
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq create-lockfiles nil)
+(setopt make-backup-files nil)
+(setopt auto-save-default nil)
+(setopt create-lockfiles nil)
 
 ;; Delete menu bar
 (menu-bar-mode -1)
@@ -73,10 +73,10 @@
 (tool-bar-mode -1)
 
 ;; Delete welcome message
-(setq inhibit-startup-message t)
+(setopt inhibit-startup-message t)
 
 ;; Add News Feed to newsticker.el
-(setq newsticker-url-list
+(setopt newsticker-url-list
       '(("deno" "https://deno.com/feed")
       ("this week in rust" "https://this-week-in-rust.org/rss.xml")
       ("Rust-lang Main blog" "https://blog.rust-lang.org/feed.xml")
