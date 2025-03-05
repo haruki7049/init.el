@@ -108,10 +108,10 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Font
 
 #+begin_src emacs-lisp
-  ;; FONT SETTING
-  ;;(set-face-attribute 'default nil
-  ;;                    :family "UDEV Gothic NF" ;;This point has a font dependency
-  ;;                    :height 140)
+  (when (member "UDEV Gothic NF" (font-family-list))
+    (set-face-attribute 'default nil
+                        :family "UDEV Gothic NF"
+                        :height (if (<= (display-pixel-width) 1920) 108 130)))
 #+end_src
 
 ** History
@@ -128,11 +128,12 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
   (setopt create-lockfiles nil)
 #+end_src
 
-** Menu bar & Tool bar
+** Menu bar, Tool bar & Scroll bar
 
 #+begin_src emacs-lisp
   (setopt menu-bar-mode nil)
   (setopt tool-bar-mode nil)
+  (setopt scroll-bar-mode nil)
 #+end_src
 
 ** Show line numbers
