@@ -129,8 +129,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Menu bar & Tool bar
 
 #+begin_src emacs-lisp
-  (menu-bar-mode nil)
-  (tool-bar-mode nil)
+  (setopt menu-bar-mode nil)
+  (setopt tool-bar-mode nil)
 #+end_src
 
 ** Show line numbers
