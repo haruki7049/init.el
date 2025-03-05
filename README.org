@@ -1,2 +1,7 @@
 #+title:  my\under{}emacs\under{}config
 #+author: haruki7049
+
+#+begin_src sh
+  # Run just command to build init.org
+  just
+#+end_src
