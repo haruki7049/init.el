@@ -8,8 +8,7 @@ When you write code in code block:
     2. ウィンドウが分割され、当該ブロックだけを抜き出したバッファが表示される
     3. このバッファは、emacs-lispモードなので、このバッファがすべてと思って、ここでコードをきれいに書く
     4. なんなら、テストもここですればいい
-    5. コードが決まったら、再び =C-c ‘=
-       -- http://blog.lambda-consulting.jp/2015/11/20/article/
+    5. コードが決まったら、再び =C-c ‘= -- http://blog.lambda-consulting.jp/2015/11/20/article/
 #+end_quote
 
 * early-init
