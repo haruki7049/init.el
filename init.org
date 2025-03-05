@@ -9,7 +9,7 @@ When you write code in code block:
     3. このバッファは、emacs-lispモードなので、このバッファがすべてと思って、ここでコードをきれいに書く
     4. なんなら、テストもここですればいい
     5. コードが決まったら、再び =C-c ‘=
-       
+
        -- http://blog.lambda-consulting.jp/2015/11/20/article/
 #+end_quote
 
@@ -127,4 +127,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
   (require 'org-tempo)
   (org-indent-mode)
+
+  (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 #+END_SRC
