@@ -62,6 +62,14 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :ensure t
     :mode
     ("\\.nix\\'" . nix-mode))
+
+  (use-package org
+    :defer t
+    :ensure t
+    :after
+    (org-tempo)
+    :config
+    (org-indent-mode))
 #+end_src
 
 *** IME
@@ -181,11 +189,4 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (add-hook 'write-file-hooks 'delete-trailing-whitespace)
-#+end_src
-
-** org-mode
-
-#+begin_src emacs-lisp
-  (require 'org-tempo)
-  (org-indent-mode)
 #+end_src
