@@ -103,6 +103,14 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (vertico-mode))
 #+end_src
 
+*** Tools
+**** Git
+
+#+begin_src emacs-lisp
+  (use-package magit
+    :ensure t)
+#+end_src
+
 * Other settings
 ** Indentation
 
