@@ -1,4 +1,2 @@
 #+title:  README of my\under{}emacs\under{}config
 #+author: haruki7049
-
-* my\under{}emacs\under{}config
