@@ -71,7 +71,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 * Other settings  
 
 #+BEGIN_SRC emacs-lisp
-  
+
   ;; Indentation
   (setopt indent-tabs-mode nil)
   (setopt tab-width 2)
@@ -114,4 +114,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
             ("zenn.dev - Deno" "https://zenn.dev/topics/deno/feed")
             ("zenn.dev - React" "https://zenn.dev/topics/react/feed")))
 
+  (require 'org-tempo)
+  (org-indent-mode)
 #+END_SRC
