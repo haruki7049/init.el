@@ -190,3 +190,31 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+begin_src emacs-lisp
   (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 #+end_src
+
+** org-mode
+
+#+begin_src emacs-lisp
+  (require 'org-tempo)
+  (org-indent-mode)
+#+end_src
+
+Set Org directory. The directory was set as =~/Notes=
+Run =git clone https://github.com/haruki7049/Notes.git=
+
+#+begin_src emacs-lisp
+  (setopt org-directory "~/Notes")
+  (setopt org-agenda-files (list org-directory))
+#+end_src
+
+Don't use the emacs-standard holidays on calendar
+
+#+begin_src emacs-lisp
+  (setopt calendar-holidays nil)
+#+end_src
+
+Use underline in agenda
+
+#+begin_src emacs-lisp
+  (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode)))
+  (setopt hl-line-face 'underline)
+#+end_src
