@@ -202,8 +202,7 @@ Set Org directory. The directory was set as =~/Notes=
 Run =git clone https://github.com/haruki7049/Notes.git=
 
 #+begin_src emacs-lisp
-  (setopt org-directory "~/Notes")
-  (setopt org-agenda-files (list org-directory))
+  (setopt org-agenda-files '("~/Notes" "~/Notes/diary"))
 #+end_src
 
 Don't use the emacs-standard holidays on calendar
