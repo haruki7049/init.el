@@ -15,9 +15,8 @@ When you write code in code block:
        -- http://blog.lambda-consulting.jp/2015/11/20/article/
 #+end_quote
 
-* Initializing packages
-** Emacs core
-*** package-archives
+* Emacs core
+** package-archives
 
 #+begin_src emacs-lisp
   (use-package use-package
@@ -30,7 +29,7 @@ When you write code in code block:
     (package-initialize))
 #+end_src
 
-*** enable-local-variables
+** enable-local-variables
 https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
 #+begin_src emacs-lisp
   (use-package emacs
@@ -39,7 +38,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.h
     (setopt enable-local-variables nil))
 #+end_src
 
-*** custom.el
+** custom.el
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html\\
 https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+begin_src emacs-lisp
@@ -52,7 +51,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
       (error nil)))
 #+end_src
 
-*** Indentation
+** Indentation
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -63,7 +62,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt tab-width 2))
 #+end_src
 
-*** Font
+** Font
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -76,7 +75,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
                           :height (if (<= (display-pixel-width) 1920) 108 130))))
 #+end_src
 
-*** History
+** History
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -86,7 +85,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt savehist-mode t))
 #+end_src
 
-*** Backup files
+** Backup files
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -98,7 +97,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt create-lockfiles nil))
 #+end_src
 
-*** Menu bar, Tool bar & Scroll bar
+** Menu bar, Tool bar & Scroll bar
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -110,7 +109,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt scroll-bar-mode nil))
 #+end_src
 
-*** Show line numbers
+** Show line numbers
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -120,7 +119,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt global-display-line-numbers-mode t))
 #+end_src
 
-*** Hide startup messege
+** Hide startup messege
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -130,7 +129,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt inhibit-startup-message t))
 #+end_src
 
-*** Newsticker
+** Newsticker
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -150,7 +149,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
               ("zenn.dev - React" "https://zenn.dev/topics/react/feed"))))
 #+end_src
 
-*** Whitespace
+** Whitespace
 
 #+begin_src emacs-lisp
   (use-package emacs
@@ -160,7 +159,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (add-hook 'write-file-hooks 'delete-trailing-whitespace))
 #+end_src
 
-** language-modes
+* language-modes
 
 #+begin_src emacs-lisp
   (use-package rust-mode
@@ -182,7 +181,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     ("\\.nix\\'" . nix-mode))
 #+end_src
 
-**** Org-mode
+** Org-mode
 
 Enable org-mode
 
@@ -260,7 +259,7 @@ Org-mode todo keywords
             '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c@)"))))
 #+end_src
 
-** IME
+* IME
 
 #+begin_src emacs-lisp
   (use-package ddskk
@@ -270,7 +269,7 @@ Org-mode todo keywords
     ("C-x C-j" . skk-mode))
 #+end_src
 
-** Theme
+* Theme
 
 #+begin_src emacs-lisp
   (use-package dracula-theme
@@ -279,7 +278,7 @@ Org-mode todo keywords
     (load-theme 'dracula t))
 #+end_src
 
-** UI
+* UI
 
 #+begin_src emacs-lisp
   (use-package vertico
@@ -289,8 +288,8 @@ Org-mode todo keywords
     (vertico-mode))
 #+end_src
 
-** Tools
-*** direnv
+* Tools
+** direnv
 
 #+begin_src emacs-lisp
   (use-package envrc
@@ -300,7 +299,7 @@ Org-mode todo keywords
     (after-init . envrc-global-mode))
 #+end_src
 
-*** Git
+** Git
 
 #+begin_src emacs-lisp
   (use-package magit
@@ -308,7 +307,7 @@ Org-mode todo keywords
     :ensure t)
 #+end_src
 
-*** Mail client
+** Mail client
 
 #+begin_src emacs-lisp
   ;;(use-package mu4e
