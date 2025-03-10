@@ -338,10 +338,9 @@ Org-mode todo keywords
 
 #+begin_src emacs-lisp
   (leaf envrc
-    :leaf-defer t
     :ensure t
-    :hook
-    (after-init . envrc-global-mode))
+    :config
+    (envrc-global-mode))
 #+end_src
 
 ** Git
