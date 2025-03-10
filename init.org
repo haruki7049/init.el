@@ -175,6 +175,12 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 * language-modes
 
 #+begin_src emacs-lisp
+  (leaf haskell-mode
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
+#+begin_src emacs-lisp
   (leaf rust-mode
     :leaf-defer t
     :ensure t
