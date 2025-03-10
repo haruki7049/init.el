@@ -173,7 +173,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+end_src
 
 * language-modes
-
 ** Haskell-mode
 
 #+begin_src emacs-lisp
