@@ -43,7 +43,117 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+end_src
 
 ** Initializing packages
+*** Emacs core
+**** Indentation
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt indent-tabs-mode nil)
+    (setopt tab-width 2))
+#+end_src
+
+**** Font
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (when (member "UDEV Gothic NF" (font-family-list))
+      (set-face-attribute 'default nil
+                          :family "UDEV Gothic NF"
+                          :height (if (<= (display-pixel-width) 1920) 108 130))))
+#+end_src
+
+**** History
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt savehist-mode t))
+#+end_src
+
+**** Backup files
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt make-backup-files nil)
+    (setopt auto-save-default nil)
+    (setopt create-lockfiles nil))
+#+end_src
+
+**** Menu bar, Tool bar & Scroll bar
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt menu-bar-mode nil)
+    (setopt tool-bar-mode nil)
+    (setopt scroll-bar-mode nil))
+#+end_src
+
+**** Show line numbers
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt global-display-line-numbers-mode t))
+#+end_src
+
+**** Hide startup messege
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt inhibit-startup-message t))
+#+end_src
+
+**** Newsticker
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (setopt newsticker-url-list
+            '(("deno" "https://deno.com/feed")
+              ("this week in rust" "https://this-week-in-rust.org/rss.xml")
+              ("Rust-lang Main blog" "https://blog.rust-lang.org/feed.xml")
+              ("Rust-lang 'Inside rust' blog" "https://blog.rust-lang.org/inside-rust/feed.xml")
+              ("zenn.dev - webrtc" "https://zenn.dev/topics/webrtc/feed")
+              ("zenn.dev - Rust" "https://zenn.dev/topics/rust/feed")
+              ("zenn.dev - FreeBSD" "https://zenn.dev/topics/freebsd/feed")
+              ("zenn.dev - TypeScript" "https://zenn.dev/topics/typescript/feed")
+              ("zenn.dev - Deno" "https://zenn.dev/topics/deno/feed")
+              ("zenn.dev - React" "https://zenn.dev/topics/react/feed"))))
+#+end_src
+
+**** Whitespace
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :defer t
+    :ensure t
+    :config
+    (add-hook 'write-file-hooks 'delete-trailing-whitespace))
+#+end_src
+
 *** language-modes
+
 #+begin_src emacs-lisp
   (use-package rust-mode
     :defer t
@@ -90,6 +200,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :config
     (load-theme 'dracula t))
 #+end_src
+
 *** UI
 
 #+begin_src emacs-lisp
@@ -128,113 +239,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+end_src
 
 * Other settings
-** Indentation
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt indent-tabs-mode nil)
-    (setopt tab-width 2))
-#+end_src
-
-** Font
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (when (member "UDEV Gothic NF" (font-family-list))
-      (set-face-attribute 'default nil
-                          :family "UDEV Gothic NF"
-                          :height (if (<= (display-pixel-width) 1920) 108 130))))
-#+end_src
-
-** History
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt savehist-mode t))
-#+end_src
-
-** Backup files
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt make-backup-files nil)
-    (setopt auto-save-default nil)
-    (setopt create-lockfiles nil))
-#+end_src
-
-** Menu bar, Tool bar & Scroll bar
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt menu-bar-mode nil)
-    (setopt tool-bar-mode nil)
-    (setopt scroll-bar-mode nil))
-#+end_src
-
-** Show line numbers
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt global-display-line-numbers-mode t))
-#+end_src
-
-** Hide startup messege
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt inhibit-startup-message t))
-#+end_src
-
-** Newsticker
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (setopt newsticker-url-list
-            '(("deno" "https://deno.com/feed")
-              ("this week in rust" "https://this-week-in-rust.org/rss.xml")
-              ("Rust-lang Main blog" "https://blog.rust-lang.org/feed.xml")
-              ("Rust-lang 'Inside rust' blog" "https://blog.rust-lang.org/inside-rust/feed.xml")
-              ("zenn.dev - webrtc" "https://zenn.dev/topics/webrtc/feed")
-              ("zenn.dev - Rust" "https://zenn.dev/topics/rust/feed")
-              ("zenn.dev - FreeBSD" "https://zenn.dev/topics/freebsd/feed")
-              ("zenn.dev - TypeScript" "https://zenn.dev/topics/typescript/feed")
-              ("zenn.dev - Deno" "https://zenn.dev/topics/deno/feed")
-              ("zenn.dev - React" "https://zenn.dev/topics/react/feed"))))
-#+end_src
-
-** Whitespace
-
-#+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
-    :ensure t
-    :config
-    (add-hook 'write-file-hooks 'delete-trailing-whitespace))
-#+end_src
 
 ** org-mode
 
