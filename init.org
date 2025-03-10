@@ -15,14 +15,25 @@ When you write code in code block:
        -- http://blog.lambda-consulting.jp/2015/11/20/article/
 #+end_quote
 
-* early-init
-** enable-local-variables
+** Initializing packages
+*** Emacs core
+**** package-archives
+
+#+begin_src emacs-lisp
+  (setq package-archives
+        '(("melpa" . "https://melpa.org/packages/")
+          ("org" . "https://orgmode.org/elpa/")
+          ("gnu" . "https://elpa.gnu.org/packages/")))
+  (package-initialize)
+#+end_src
+
+**** enable-local-variables
 https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
 #+begin_src emacs-lisp
   (setq-default enable-local-variables nil)
 #+end_src
 
-** custom.el
+**** custom.el
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html\\
 https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+begin_src emacs-lisp
@@ -32,18 +43,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (error nil))
 #+end_src
 
-* use-package
-** package-archives
-#+begin_src emacs-lisp
-  (setq package-archives
-        '(("melpa" . "https://melpa.org/packages/")
-          ("org" . "https://orgmode.org/elpa/")
-          ("gnu" . "https://elpa.gnu.org/packages/")))
-  (package-initialize)
-#+end_src
-
-** Initializing packages
-*** Emacs core
 **** Indentation
 
 #+begin_src emacs-lisp
