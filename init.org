@@ -178,6 +178,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
   (leaf rust-mode
     :leaf-defer t
     :ensure t
+    :config
+    (setopt rust-mode-treesitter-derive t)
     :mode
     ("\\.rs\\'" . rust-mode))
 
