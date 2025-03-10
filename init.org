@@ -15,24 +15,37 @@ When you write code in code block:
        -- http://blog.lambda-consulting.jp/2015/11/20/article/
 #+end_quote
 
-* Emacs core
-** package-archives
+* leaf.el installation
 
 #+begin_src emacs-lisp
-  (use-package use-package
-    :ensure t
-    :config
-    (setopt package-archives
-          '(("melpa" . "https://melpa.org/packages/")
-            ("org" . "https://orgmode.org/elpa/")
-            ("gnu" . "https://elpa.gnu.org/packages/")))
-    (package-initialize))
+  (eval-and-compile
+    (customize-set-variable
+     'package-archives '(("org" . "https://orgmode.org/elpa/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "https://elpa.gnu.org/packages/")))
+    (package-initialize)
+    (unless (package-installed-p 'leaf)
+      (package-refresh-contents)
+      (package-install 'leaf))
+
+    (leaf leaf-keywords
+      :ensure t
+      :init
+      ;; optional packages if you want to use :hydra, :el-get, :blackout,,,
+      (leaf hydra :ensure t)
+      (leaf el-get :ensure t)
+      (leaf blackout :ensure t)
+
+      :config
+      ;; initialize leaf-keywords.el
+      (leaf-keywords-init)))
 #+end_src
 
+* Emacs core
 ** enable-local-variables
 https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
 #+begin_src emacs-lisp
-  (use-package emacs
+  (leaf emacs
     :ensure t
     :config
     (setopt enable-local-variables nil))
@@ -42,7 +55,7 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.h
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html\\
 https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+begin_src emacs-lisp
-  (use-package emacs
+  (leaf emacs
     :ensure t
     :config
     (setopt custom-file "~/.config/emacs/custom.el")
@@ -54,8 +67,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Indentation
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt indent-tabs-mode nil)
@@ -65,8 +78,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Font
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (when (member "UDEV Gothic NF" (font-family-list))
@@ -78,8 +91,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** History
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt savehist-mode t))
@@ -88,8 +101,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Backup files
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt make-backup-files nil)
@@ -100,8 +113,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Menu bar, Tool bar & Scroll bar
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt menu-bar-mode nil)
@@ -112,8 +125,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Show line numbers
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt global-display-line-numbers-mode t))
@@ -122,8 +135,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Hide startup messege
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt inhibit-startup-message t))
@@ -132,8 +145,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Newsticker
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (setopt newsticker-url-list
@@ -152,8 +165,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 ** Whitespace
 
 #+begin_src emacs-lisp
-  (use-package emacs
-    :defer t
+  (leaf emacs
+    :leaf-defer t
     :ensure t
     :config
     (add-hook 'write-file-hooks 'delete-trailing-whitespace))
@@ -162,20 +175,20 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 * language-modes
 
 #+begin_src emacs-lisp
-  (use-package rust-mode
-    :defer t
+  (leaf rust-mode
+    :leaf-defer t
     :ensure t
     :mode
     ("\\.rs\\'" . rust-mode))
 
-  (use-package zig-mode
-    :defer t
+  (leaf zig-mode
+    :leaf-defer t
     :ensure t
     :mode
     ("\\.zig\\'" . zig-mode))
 
-  (use-package nix-mode
-    :defer t
+  (leaf nix-mode
+    :leaf-defer t
     :ensure t
     :mode
     ("\\.nix\\'" . nix-mode))
@@ -186,22 +199,22 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 Enable org-mode
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :mode
     ("\\.org\\'" . org-mode))
 
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :after
     (org-tempo)
     :config
     (org-indent-mode))
 
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (require 'org-tempo))
@@ -211,8 +224,8 @@ Set Org directory. The directory was set as =~/Notes=
 Run =git clone https://github.com/haruki7049/Notes.git=
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (setopt org-agenda-files '("~/Notes" "~/Notes/diary")))
@@ -221,8 +234,8 @@ Run =git clone https://github.com/haruki7049/Notes.git=
 Don't use the emacs-standard holidays on calendar
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (setopt calendar-holidays nil))
@@ -231,8 +244,8 @@ Don't use the emacs-standard holidays on calendar
 Use underline in agenda
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (setopt hl-line-face 'underline)
@@ -241,8 +254,8 @@ Use underline in agenda
 #+end_src
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (setopt org-enforce-todo-dependencies t))
@@ -251,8 +264,8 @@ Use underline in agenda
 Org-mode todo keywords
 
 #+begin_src emacs-lisp
-  (use-package org
-    :defer t
+  (leaf org
+    :leaf-defer t
     :ensure t
     :config
     (setopt org-todo-keywords
@@ -262,8 +275,8 @@ Org-mode todo keywords
 * IME
 
 #+begin_src emacs-lisp
-  (use-package ddskk
-    :defer t
+  (leaf ddskk
+    :leaf-defer t
     :ensure t
     :bind
     ("C-x C-j" . skk-mode))
@@ -272,7 +285,7 @@ Org-mode todo keywords
 * Theme
 
 #+begin_src emacs-lisp
-  (use-package dracula-theme
+  (leaf dracula-theme
     :ensure t
     :config
     (load-theme 'dracula t))
@@ -281,8 +294,8 @@ Org-mode todo keywords
 * UI
 
 #+begin_src emacs-lisp
-  (use-package vertico
-    :defer t
+  (leaf vertico
+    :leaf-defer t
     :ensure t
     :config
     (vertico-mode))
@@ -292,8 +305,8 @@ Org-mode todo keywords
 ** direnv
 
 #+begin_src emacs-lisp
-  (use-package envrc
-    :defer t
+  (leaf envrc
+    :leaf-defer t
     :ensure t
     :hook
     (after-init . envrc-global-mode))
@@ -302,15 +315,15 @@ Org-mode todo keywords
 ** Git
 
 #+begin_src emacs-lisp
-  (use-package magit
-    :defer t
+  (leaf magit
+    :leaf-defer t
     :ensure t)
 #+end_src
 
 ** Mail client
 
 #+begin_src emacs-lisp
-  ;;(use-package mu4e
-  ;;  :defer t
+  ;;(leaf mu4e
+  ;;  :leaf-defer t
   ;;  :ensure t)
 #+end_src
