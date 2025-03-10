@@ -174,32 +174,47 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 * language-modes
 
+** Haskell-mode
+
 #+begin_src emacs-lisp
   (leaf haskell-mode
     :leaf-defer t
     :ensure t)
 #+end_src
 
+** gdscript-mode (Godot)
+
+#+begin_src emacs-lisp
+  (leaf gdscript-mode
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
+** Rust-mode
+
 #+begin_src emacs-lisp
   (leaf rust-mode
     :leaf-defer t
     :ensure t
-    :config
-    (setopt rust-mode-treesitter-derive t)
-    :mode
-    ("\\.rs\\'" . rust-mode))
+    :mode "\\.rs\\'")
+#+end_src
 
+** Zig-mode
+
+#+begin_src emacs-lisp
   (leaf zig-mode
     :leaf-defer t
     :ensure t
-    :mode
-    ("\\.zig\\'" . zig-mode))
+    :mode "\\.zig\\'")
+#+end_src
 
+** Nix-mode
+
+#+begin_src emacs-lisp
   (leaf nix-mode
     :leaf-defer t
     :ensure t
-    :mode
-    ("\\.nix\\'" . nix-mode))
+    :mode "\\.nix\\'")
 #+end_src
 
 ** Org-mode
@@ -226,6 +241,16 @@ Enable org-mode
     :ensure t
     :config
     (require 'org-tempo))
+#+end_src
+
+org-file converter to Markdown
+
+#+begin_src emacs-lisp
+  (leaf org
+    :leaf-defer t
+    :ensure t
+    :config
+    (require 'ox-md))
 #+end_src
 
 Set Org directory. The directory was set as =~/Notes=
