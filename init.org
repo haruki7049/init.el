@@ -172,75 +172,9 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :ensure t
     :mode
     ("\\.nix\\'" . nix-mode))
-
-  (use-package org
-    :defer t
-    :ensure t
-    :after
-    (org-tempo)
-    :config
-    (org-indent-mode))
 #+end_src
 
-*** IME
-
-#+begin_src emacs-lisp
-  (use-package ddskk
-    :defer t
-    :ensure t
-    :bind
-    ("C-x C-j" . skk-mode))
-#+end_src
-
-*** Theme
-
-#+begin_src emacs-lisp
-  (use-package dracula-theme
-    :ensure t
-    :config
-    (load-theme 'dracula t))
-#+end_src
-
-*** UI
-
-#+begin_src emacs-lisp
-  (use-package vertico
-    :defer t
-    :ensure t
-    :config
-    (vertico-mode))
-#+end_src
-
-*** Tools
-**** direnv
-
-#+begin_src emacs-lisp
-  (use-package envrc
-    :defer t
-    :ensure t
-    :hook
-    (after-init . envrc-global-mode))
-#+end_src
-
-**** Git
-
-#+begin_src emacs-lisp
-  (use-package magit
-    :defer t
-    :ensure t)
-#+end_src
-
-**** Mail client
-
-#+begin_src emacs-lisp
-  ;;(use-package mu4e
-  ;;  :defer t
-  ;;  :ensure t)
-#+end_src
-
-* Other settings
-
-** org-mode
+**** Org-mode
 
 Enable org-mode
 
@@ -250,11 +184,15 @@ Enable org-mode
     :ensure t
     :mode
     ("\\.org\\'" . org-mode))
-#+end_src
 
-Enable org-tempo
+  (use-package org
+    :defer t
+    :ensure t
+    :after
+    (org-tempo)
+    :config
+    (org-indent-mode))
 
-#+begin_src emacs-lisp
   (use-package org
     :defer t
     :ensure t
@@ -312,4 +250,60 @@ Org-mode todo keywords
     :config
     (setopt org-todo-keywords
             '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c@)"))))
+#+end_src
+
+*** IME
+
+#+begin_src emacs-lisp
+  (use-package ddskk
+    :defer t
+    :ensure t
+    :bind
+    ("C-x C-j" . skk-mode))
+#+end_src
+
+*** Theme
+
+#+begin_src emacs-lisp
+  (use-package dracula-theme
+    :ensure t
+    :config
+    (load-theme 'dracula t))
+#+end_src
+
+*** UI
+
+#+begin_src emacs-lisp
+  (use-package vertico
+    :defer t
+    :ensure t
+    :config
+    (vertico-mode))
+#+end_src
+
+*** Tools
+**** direnv
+
+#+begin_src emacs-lisp
+  (use-package envrc
+    :defer t
+    :ensure t
+    :hook
+    (after-init . envrc-global-mode))
+#+end_src
+
+**** Git
+
+#+begin_src emacs-lisp
+  (use-package magit
+    :defer t
+    :ensure t)
+#+end_src
+
+**** Mail client
+
+#+begin_src emacs-lisp
+  ;;(use-package mu4e
+  ;;  :defer t
+  ;;  :ensure t)
 #+end_src
