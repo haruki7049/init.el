@@ -33,7 +33,10 @@ When you write code in code block:
 *** enable-local-variables
 https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.html
 #+begin_src emacs-lisp
-  (setq-default enable-local-variables nil)
+  (use-package emacs
+    :ensure t
+    :config
+    (setopt enable-local-variables nil))
 #+end_src
 
 *** custom.el
