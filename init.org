@@ -115,6 +115,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package magit
+    :defer t
     :ensure t)
 #+end_src
 
@@ -122,6 +123,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   ;;(use-package mu4e
+  ;;  :defer t
   ;;  :ensure t)
 #+end_src
 
@@ -130,6 +132,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt indent-tabs-mode nil)
@@ -140,6 +143,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (when (member "UDEV Gothic NF" (font-family-list))
@@ -152,6 +156,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt savehist-mode t))
@@ -161,6 +166,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt make-backup-files nil)
@@ -172,6 +178,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt menu-bar-mode nil)
@@ -183,6 +190,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt global-display-line-numbers-mode t))
@@ -192,6 +200,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt inhibit-startup-message t))
@@ -201,6 +210,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (setopt newsticker-url-list
@@ -220,6 +230,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 
 #+begin_src emacs-lisp
   (use-package emacs
+    :defer t
     :ensure t
     :config
     (add-hook 'write-file-hooks 'delete-trailing-whitespace))
@@ -231,6 +242,7 @@ Enable org-mode
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :mode
     ("\\.org\\'" . org-mode))
@@ -240,6 +252,7 @@ Enable org-tempo
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (require 'org-tempo))
@@ -250,6 +263,7 @@ Run =git clone https://github.com/haruki7049/Notes.git=
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (setopt org-agenda-files '("~/Notes" "~/Notes/diary")))
@@ -259,6 +273,7 @@ Don't use the emacs-standard holidays on calendar
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (setopt calendar-holidays nil))
@@ -268,6 +283,7 @@ Use underline in agenda
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (setopt hl-line-face 'underline)
@@ -277,6 +293,7 @@ Use underline in agenda
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (setopt org-enforce-todo-dependencies t))
@@ -286,6 +303,7 @@ Org-mode todo keywords
 
 #+begin_src emacs-lisp
   (use-package org
+    :defer t
     :ensure t
     :config
     (setopt org-todo-keywords
