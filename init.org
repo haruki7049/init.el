@@ -40,10 +40,13 @@ https://www.gnu.org/software/emacs/manual/html_node/elisp/File-Local-Variables.h
 https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Customizations.html\\
 https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+begin_src emacs-lisp
-  (setq custom-file "~/.config/emacs/custom.el")
-  (condition-case nil
-      (load custom-file)
-    (error nil))
+  (use-package emacs
+    :ensure t
+    :config
+    (setopt custom-file "~/.config/emacs/custom.el")
+    (condition-case nil
+        (load custom-file)
+      (error nil)))
 #+end_src
 
 *** Indentation
