@@ -121,8 +121,8 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 **** Mail client
 
 #+begin_src emacs-lisp
-  (use-package mu4e
-    :ensure t)
+  ;;(use-package mu4e
+  ;;  :ensure t)
 #+end_src
 
 * Other settings
