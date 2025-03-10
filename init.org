@@ -20,11 +20,14 @@ When you write code in code block:
 *** package-archives
 
 #+begin_src emacs-lisp
-  (setq package-archives
-        '(("melpa" . "https://melpa.org/packages/")
-          ("org" . "https://orgmode.org/elpa/")
-          ("gnu" . "https://elpa.gnu.org/packages/")))
-  (package-initialize)
+  (use-package use-package
+    :ensure t
+    :config
+    (setopt package-archives
+          '(("melpa" . "https://melpa.org/packages/")
+            ("org" . "https://orgmode.org/elpa/")
+            ("gnu" . "https://elpa.gnu.org/packages/")))
+    (package-initialize))
 #+end_src
 
 *** enable-local-variables
