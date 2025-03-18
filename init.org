@@ -216,6 +216,15 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :mode "\\.nix\\'")
 #+end_src
 
+** Clojure-mode
+
+#+begin_src emacs-lisp
+  (leaf clojure-mode
+    :leaf-defer t
+    :ensure t
+    :mode "\\.clj\\'")
+#+end_src
+
 ** Org-mode
 
 Enable org-mode

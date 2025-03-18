@@ -7,6 +7,7 @@ mastodon.plstore/
 newsticker/
 themes/
 games/
+eshell/
 history
 init.el
 custom.el
