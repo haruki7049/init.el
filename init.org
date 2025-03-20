@@ -261,6 +261,18 @@ org-file converter to Markdown
     (require 'ox-md))
 #+end_src
 
+org-file converter to html?
+
+htmlize
+
+#+begin_src emacs-lisp
+  (leaf htmlize
+    :leaf-defer t
+    :ensure t
+    :config
+    (require 'htmlize))
+#+end_src
+
 Set Org directory. The directory was set as =~/Notes=
 Run =git clone https://github.com/haruki7049/Notes.git=
 
