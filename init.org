@@ -225,6 +225,17 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :mode "\\.clj\\'")
 #+end_src
 
+** lua-mode
+
+#+begin_src emacs-lisp
+  (leaf lua-mode
+    :leaf-defer t
+    :ensure t
+    :mode "\\.lua\\'"
+    :config
+    (setopt lua-indent-level 4))
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
