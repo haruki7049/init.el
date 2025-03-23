@@ -236,6 +236,15 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (setopt lua-indent-level 4))
 #+end_src
 
+** Markdown-mode
+
+#+begin_src emacs-lisp
+  (leaf markdown-mode
+    :leaf-defer t
+    :ensure t
+    :mode ("\\.md\\'" . gfm-mode))
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
