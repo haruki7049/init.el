@@ -412,10 +412,5 @@ Org-mode todo keywords
        slime-fancy
        slime-banner
        slime-autoloads))
-
-    ;; TODO: Slime cannot uses the others instead of sbcl
-    (setopt slime-lisp-implementations
-	    '((sbcl ("/usr/bin/env" "sbcl"))
-	      (ccl ("/usr/bin/env" "ccl"))
-	      (clisp ("/usr/bin/env" "clisp")))))
+    (setopt inferior-lisp-program "sbcl"))
 #+end_src
