@@ -390,3 +390,23 @@ Org-mode todo keywords
   ;;  :leaf-defer t
   ;;  :ensure t)
 #+end_src
+
+** Slime: The Superior Lisp Interaction Mode for Emacs
+
+#+begin_src emacs-lisp
+  (leaf slime
+    :leaf-defer t
+    :ensure t
+    :config
+    (slime-setup
+     '(slime-repl
+       slime-fancy
+       slime-banner
+       slime-autoloads))
+
+    ;; TODO: Slime cannot uses the others instead of sbcl
+    (setopt slime-lisp-implementations
+	    '((sbcl ("/usr/bin/env" "sbcl"))
+	      (ccl ("/usr/bin/env" "ccl"))
+	      (clisp ("/usr/bin/env" "clisp")))))
+#+end_src
