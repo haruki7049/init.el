@@ -245,6 +245,18 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :mode ("\\.md\\'" . gfm-mode))
 #+end_src
 
+** Csound-mode
+
+#+begin_src emacs-lisp
+  (leaf csound-mode
+    :leaf-defer t
+    :ensure t
+    :mode (("\\.csd\\'" . csound-mode)
+           ("\\.orc\\'" . csound-mode)
+           ("\\.sco\\'" . csound-mode)
+           ("\\.udo\\'" . csound-mode)))
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
