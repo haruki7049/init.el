@@ -257,6 +257,21 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
            ("\\.udo\\'" . csound-mode)))
 #+end_src
 
+** Erlang-mode
+
+#+begin_src emacs-lisp
+  (leaf erlang
+    :leaf-defer t
+    :ensure t
+    :mode (("\\.erl\\'" . erlang-mode)
+           ("\\.hrl\\'" . erlang-mode)
+           ("\\.app\\'" . erlang-mode)
+           ("\\.app.src\\'" . erlang-mode)
+           ("\\.config\\'" . erlang-mode)
+           ("\\.script\\'" . erlang-mode)
+           ("\\.escript\\'" . erlang-mode)))
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
