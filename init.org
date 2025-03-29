@@ -272,10 +272,10 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
            ("\\.escript\\'" . erlang-mode)))
 #+end_src
 
-** Gleam-mode
+** Gleam-ts-mode
 
 #+begin_src emacs-lisp
-  (leaf gleam-mode
+  (leaf gleam-ts-mode
     :leaf-defer t
     :ensure t
     :mode "\\.gleam\\'")
