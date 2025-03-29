@@ -8,6 +8,7 @@ newsticker/
 themes/
 games/
 eshell/
+tree-sitter/
 history
 init.el
 custom.el
