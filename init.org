@@ -272,6 +272,15 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
            ("\\.escript\\'" . erlang-mode)))
 #+end_src
 
+** Gleam-mode
+
+#+begin_src emacs-lisp
+  (leaf gleam-mode
+    :leaf-defer t
+    :ensure t
+    :mode "\\.gleam\\'")
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
