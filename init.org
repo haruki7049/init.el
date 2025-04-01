@@ -420,6 +420,15 @@ Org-mode todo keywords
     (envrc-global-mode))
 #+end_src
 
+** dmacro
+
+#+begin_src emacs-lisp
+  (leaf dmacro
+    :ensure t
+    :config
+    (global-dmacro-mode))
+#+end_src
+
 ** Git
 
 #+begin_src emacs-lisp
