@@ -281,6 +281,14 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :mode "\\.gleam\\'")
 #+end_src
 
+** Dhall-mode
+
+#+begin_src emacs-lisp
+  (leaf dhall-mode
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
 ** Org-mode
 
 Enable org-mode
