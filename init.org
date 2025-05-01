@@ -389,6 +389,15 @@ Org-mode todo keywords
             '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c@)"))))
 #+end_src
 
+
+** Alda-mode
+
+#+begin_src emacs-lisp
+  (leaf alda-mode
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
 * IME
 
 #+begin_src emacs-lisp
