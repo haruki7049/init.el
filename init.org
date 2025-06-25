@@ -85,7 +85,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     (when (member "UDEV Gothic NF" (font-family-list))
       (set-face-attribute 'default nil
                           :family "UDEV Gothic NF"
-                          :height 140)))
+                          :height 100)))
 #+end_src
 
 ** History
