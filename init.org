@@ -190,33 +190,6 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :ensure t)
 #+end_src
 
-** Rust-mode
-
-#+begin_src emacs-lisp
-  (leaf rust-mode
-    :leaf-defer t
-    :ensure t
-    :mode "\\.rs\\'")
-#+end_src
-
-** Zig-mode
-
-#+begin_src emacs-lisp
-  (leaf zig-mode
-    :leaf-defer t
-    :ensure t
-    :mode "\\.zig\\'")
-#+end_src
-
-** Nix-mode
-
-#+begin_src emacs-lisp
-  (leaf nix-mode
-    :leaf-defer t
-    :ensure t
-    :mode "\\.nix\\'")
-#+end_src
-
 ** Clojure-mode
 
 #+begin_src emacs-lisp
@@ -426,8 +399,29 @@ Org-mode todo keywords
     (with-eval-after-load 'eglot
       (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
 
+    ;; Language modes
+    (leaf rust-mode
+      :doc "Rust mode for Emacs"
+      :leaf-defer t
+      :ensure t
+      :mode "\\.rs\\'")
+
+    (leaf zig-mode
+      :doc "Zig mode for Emacs"
+      :leaf-defer t
+      :ensure t
+      :mode "\\.zig\\'")
+
+    (leaf nix-mode
+      :doc "Nix mode for Emacs"
+      :leaf-defer t
+      :ensure t
+      :mode "\\.nix\\'")
+
     :hook
-    (rust-mode-hook . eglot-ensure))
+    (rust-mode-hook . eglot-ensure)
+    (zig-mode-hook . eglot-ensure)
+    (nix-mode-hook . eglot-ensure))
 #+end_src
 
 * Theme
