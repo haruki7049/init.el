@@ -418,6 +418,9 @@ Org-mode todo keywords
 #+end_src
 
 * UI
+** vertico: VERTical Interactive COmpletion
+
+For mini buffer...
 
 #+begin_src emacs-lisp
   (leaf vertico
