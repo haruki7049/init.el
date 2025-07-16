@@ -430,6 +430,16 @@ For mini buffer...
     (vertico-mode))
 #+end_src
 
+** corfu: COmpletion in Region FUnction
+
+For normal buffer...
+
+#+begin_src emacs-lisp
+  (leaf corfu
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
 * Tools
 ** direnv
 
