@@ -389,7 +389,6 @@ Org-mode todo keywords
             '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELED(c@)"))))
 #+end_src
 
-
 ** Alda-mode
 
 #+begin_src emacs-lisp
@@ -437,7 +436,32 @@ For normal buffer...
 #+begin_src emacs-lisp
   (leaf corfu
     :leaf-defer t
-    :ensure t)
+    :ensure t
+
+    :bind
+    (("C-<tab>" . completion-at-point)
+     (:corfu-map
+     ("RET" . nil)))
+
+    :custom
+    ((text-mode-ispell-word-completion . nil)
+     (tab-always-indent . 'complete))
+
+    :init
+    (global-corfu-mode)
+    (corfu-popupinfo-mode)
+
+    :config
+    ;; eglot
+    (leaf eglot
+      :ensure t
+
+      :custom
+      (eglot-ignored-server-capabilities . '(:documentHighlightProvider :inlayHintProvider :typeHierarchyProvider))
+      (eldoc-echo-area-use-multiline-p . nil)
+
+      :hook
+      (rust-mode-hook . eglot-ensure)))
 #+end_src
 
 * Tools

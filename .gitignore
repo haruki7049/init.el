@@ -12,6 +12,7 @@ tree-sitter/
 history
 init.el
 custom.el
+.lsp-session-v1
 
 # nix-direnv
 .direnv/
