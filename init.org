@@ -35,6 +35,7 @@ When you write code in code block:
       (leaf hydra :ensure t)
       (leaf el-get :ensure t)
       (leaf blackout :ensure t)
+      (leaf leaf-convert :ensure t)
 
       :config
       ;; initialize leaf-keywords.el
@@ -407,6 +408,28 @@ Org-mode todo keywords
     ("C-x C-j" . skk-mode))
 #+end_src
 
+* LSP
+** eglot
+
+#+begin_src emacs-lisp
+  (leaf eglot
+    :ensure t
+
+    :custom
+    (eldoc-echo-area-use-multiline-p . nil)
+    (eglot-ignored-server-capabilities . '(:documentHighlightProvider
+                                           :inlayHintProvider
+                                           :typeHierarchyProvider))
+
+    :config
+    (leaf-handler-package eglot eglot nil)
+    (with-eval-after-load 'eglot
+      (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
+
+    :hook
+    (rust-mode-hook . eglot-ensure))
+#+end_src
+
 * Theme
 
 #+begin_src emacs-lisp
@@ -449,19 +472,7 @@ For normal buffer...
 
     :init
     (global-corfu-mode)
-    (corfu-popupinfo-mode)
-
-    :config
-    ;; eglot
-    (leaf eglot
-      :ensure t
-
-      :custom
-      (eglot-ignored-server-capabilities . '(:documentHighlightProvider :inlayHintProvider :typeHierarchyProvider))
-      (eldoc-echo-area-use-multiline-p . nil)
-
-      :hook
-      (rust-mode-hook . eglot-ensure)))
+    (corfu-popupinfo-mode))
 #+end_src
 
 * Tools
