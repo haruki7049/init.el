@@ -485,6 +485,22 @@ For normal buffer...
     (corfu-popupinfo-mode))
 #+end_src
 
+** fussy: Emacs completion-style leveraging flx / fzf / etc
+
+#+begin_src emacs-lisp
+  (leaf fussy
+    :leaf-defer t
+    :ensure t
+
+    :config
+    (leaf flx
+      :leaf-defer t
+      :ensure t)
+
+    :custom
+    (fussy-score-fn . 'flx-score))
+#+end_src
+
 * Tools
 ** direnv
 
