@@ -84,9 +84,10 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :ensure t
     :config
     (when (member "UDEV Gothic NF" (font-family-list))
-      (set-face-attribute 'default nil
-                          :family "UDEV Gothic NF"
-                          :height 100)))
+      (let ((height (if (>= (x-display-pixel-width) 1280) 160 100)))
+        (set-face-attribute 'default nil
+                            :family "UDEV Gothic NF"
+                            :height height))))
 #+end_src
 
 ** History
@@ -174,6 +175,18 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
 #+end_src
 
 * language-modes
+** java-mode
+
+#+begin_src emacs-lisp
+  (leaf emacs
+    :leaf-defer t
+    :ensure t
+
+    :hook (java-mode-hook . (lambda ()
+                              "Java indentation"
+                              (setopt c-basic-offset 2))))
+#+end_src
+
 ** rust-mode
 
 #+begin_src emacs-lisp
