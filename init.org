@@ -84,7 +84,7 @@ https://qiita.com/javacommons/items/87bebffc4183a48cf070
     :ensure t
     :config
     (when (member "UDEV Gothic NF" (font-family-list))
-      (let ((height (if (>= (x-display-pixel-width) 1280) 160 100)))
+      (let ((height (if (>= (x-display-pixel-height) 1280) 160 100)))
         (set-face-attribute 'default nil
                             :family "UDEV Gothic NF"
                             :height height))))
