@@ -13,6 +13,7 @@ history
 init.el
 custom.el
 .lsp-session-v1
+ellama-sessions/
 
 # nix-direnv
 .direnv/

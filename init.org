@@ -554,3 +554,11 @@ For normal buffer...
        slime-autoloads))
     (setopt inferior-lisp-program "sbcl"))
 #+end_src
+
+** ellama: Ellama is a tool for interacting with large language models from Emacs
+
+#+begin_src emacs-lisp
+  (leaf ellama
+    :leaf-defer t
+    :ensure t)
+#+end_src
