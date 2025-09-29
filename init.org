@@ -405,6 +405,14 @@ Org-mode todo keywords
     :ensure t)
 #+end_src
 
+** raku-mode
+
+#+begin_src emacs-lisp
+  (leaf raku-mode
+    :leaf-defer t
+    :ensure t)
+#+end_src
+
 * IME
 
 #+begin_src emacs-lisp
