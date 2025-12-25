@@ -506,6 +506,52 @@ For normal buffer...
     (marginalia-mode))
 #+end_src
 
+** consult: Consulting completing-read
+
+#+begin_src emacs-lisp
+  (leaf consult
+    :ensure t
+
+    :bind (("C-s" . consult-line)
+           ("C-x b" . consult-buffer)
+           ("M-y" . consult-yank-pop)
+           ("M-g g" . consult-goto-line)
+           ("M-f" . consult-fd)
+           ("M-g /" . consult-ripgrep))
+
+    :config
+
+    (consult-customize
+     consult-ripgrep consult-git-grep consult-grep
+     consult-bookmark consult-recent-file consult-xref
+     consult--source-bookmark consult--source-file-register
+     consult--source-recent-file consult--source-project-recent-file
+     :preview-key 'any))
+#+end_src
+
+** embark: Emacs Mini-Buffer Actions Rooted in Keymaps
+
+#+begin_src emacs-lisp
+  (leaf embark
+    :ensure t
+
+    :bind (("C-." . embark-act)         ; Pick an action for the target
+           ("M-." . embark-dwim)        ; "Do What I Mean" (default action)
+           ("C-h B" . embark-bindings)) ; List all available bindings
+
+    :config
+    ;; Optionally replace the file-browsing with a more powerful one
+    (setopt prefix-help-command #'embark-prefix-help-command))
+#+end_src
+
+** embark-consult
+
+#+begin_src emacs-lisp
+  (leaf embark-consult
+    :ensure t
+    :after (embark consult))
+#+end_src
+
 * Completion Styles
 ** orderless: Emacs completion style that matches multiple regexps in any order
 
