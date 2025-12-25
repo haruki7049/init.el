@@ -468,10 +468,11 @@ For mini buffer...
 
 #+begin_src emacs-lisp
   (leaf vertico
-    :leaf-defer t
     :ensure t
-    :config
-    (vertico-mode))
+
+    :init
+    (vertico-mode)
+    )
 #+end_src
 
 ** corfu: COmpletion in Region FUnction
@@ -480,7 +481,6 @@ For normal buffer...
 
 #+begin_src emacs-lisp
   (leaf corfu
-    :leaf-defer t
     :ensure t
 
     :bind
@@ -497,20 +497,27 @@ For normal buffer...
     (corfu-popupinfo-mode))
 #+end_src
 
-** fussy: Emacs completion-style leveraging flx / fzf / etc
+** marginalia.el: Marginalia in the minibuffer
 
 #+begin_src emacs-lisp
-  (leaf fussy
+  (leaf marginalia
+    :ensure t
     :leaf-defer t
+
+    :init
+    (marginalia-mode))
+#+end_src
+
+* Completion Styles
+** orderless: Emacs completion style that matches multiple regexps in any order
+
+#+begin_src emacs-lisp
+  (leaf orderless
     :ensure t
 
-    :config
-    (leaf flx
-      :leaf-defer t
-      :ensure t)
-
     :custom
-    (fussy-score-fn . 'flx-score))
+    ((completion-styles . '(orderless basic))
+     (completion-category-overrides . '((file (styles basic partial-completion))))))
 #+end_src
 
 * Tools
