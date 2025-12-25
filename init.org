@@ -484,9 +484,7 @@ For normal buffer...
     :ensure t
 
     :bind
-    (("C-<tab>" . completion-at-point)
-     (:corfu-map
-     ("RET" . nil)))
+    ((:corfu-map ("RET" . nil)))
 
     :custom
     ((text-mode-ispell-word-completion . nil)
