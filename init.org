@@ -454,6 +454,9 @@ Org-mode todo keywords
     (leaf-handler-package eglot eglot nil)
     (with-eval-after-load 'eglot
       (add-hook 'eglot--managed-mode-hook (lambda () (flymake-mode -1))))
+    (with-eval-after-load 'eglot
+      (add-to-list 'eglot-server-programs
+                   '(lean4-mode . ("lake" "serve"))))
 
     :hook
     (rust-mode-hook . eglot-ensure)
@@ -463,7 +466,8 @@ Org-mode todo keywords
     (gdscript-mode-hook . eglot-ensure)
     (clojure-mode-hook . eglot-ensure)
     (lua-mode-hook . eglot-ensure)
-    (erlang-mode-hook . eglot-ensure))
+    (erlang-mode-hook . eglot-ensure)
+    (lean4-mode-hook . eglot-ensure))
 #+end_src
 
 * Theme
@@ -498,7 +502,8 @@ For normal buffer...
     :ensure t
 
     :bind
-    ((:corfu-map ("RET" . nil)))
+    ((:corfu-map
+      ("RET" . nil)))
 
     :custom
     ((text-mode-ispell-word-completion . nil)
@@ -575,7 +580,8 @@ For normal buffer...
 
     :custom
     ((completion-styles . '(orderless basic))
-     (completion-category-overrides . '((file (styles basic partial-completion))))))
+     (completion-category-overrides . '((file (styles basic partial-completion))
+                                        (eglot (styles orderless basic))))))
 #+end_src
 
 * Tools
