@@ -457,6 +457,9 @@ Org-mode todo keywords
     (with-eval-after-load 'eglot
       (add-to-list 'eglot-server-programs
                    '(lean4-mode . ("lake" "serve"))))
+    (with-eval-after-load 'eglot
+      (add-to-list 'eglot-server-programs
+                   '(erlang-mode . ("elp" "server"))))
 
     :hook
     (rust-mode-hook . eglot-ensure)
