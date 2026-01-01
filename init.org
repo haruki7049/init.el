@@ -413,6 +413,20 @@ Org-mode todo keywords
     :ensure t)
 #+end_src
 
+** lean4-mode
+
+#+begin_src emacs-lisp
+  (leaf lean4-mode
+    :ensure t
+    :leaf-defer t
+
+    :vc (:url "https://github.com/leanprover-community/lean4-mode.git"
+         :rev :last-release
+         ;; Or, if you prefer the bleeding edge version of Lean4-Mode:
+         ;; :rev :newest
+         ))
+#+End_src
+
 * IME
 
 #+begin_src emacs-lisp
