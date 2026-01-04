@@ -460,6 +460,9 @@ Org-mode todo keywords
     (with-eval-after-load 'eglot
       (add-to-list 'eglot-server-programs
                    '(erlang-mode . ("elp" "server"))))
+    (with-eval-after-load 'eglot
+      (add-to-list 'eglot-server-programs
+                   '(gleam-ts-mode . ("gleam" "lsp"))))
 
     :hook
     (rust-mode-hook . eglot-ensure)
