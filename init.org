@@ -473,7 +473,8 @@ Org-mode todo keywords
     (clojure-mode-hook . eglot-ensure)
     (lua-mode-hook . eglot-ensure)
     (erlang-mode-hook . eglot-ensure)
-    (lean4-mode-hook . eglot-ensure))
+    (lean4-mode-hook . eglot-ensure)
+    (gleam-ts-mode-hook . eglot-ensure))
 #+end_src
 
 * Theme
