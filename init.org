@@ -427,6 +427,14 @@ Org-mode todo keywords
          ))
 #+End_src
 
+** kotlin-mode
+
+#+begin_src emacs-lisp
+  (leaf kotlin-mode
+    :ensure t
+    :leaf-defer t)
+#+end_src
+
 * IME
 
 #+begin_src emacs-lisp
