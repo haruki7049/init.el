@@ -435,6 +435,15 @@ Org-mode todo keywords
     :leaf-defer t)
 #+end_src
 
+** typescript-ts-mode
+
+#+begin_src emacs-lisp
+  (leaf emacs
+    :ensure t
+    :leaf-defer t
+    :mode (("\\.ts\\'" "\\.tsx\\'") . typescript-ts-mode))
+#+end_src
+
 * IME
 
 #+begin_src emacs-lisp
